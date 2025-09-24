@@ -1,9 +1,16 @@
 import React from 'react'
 
-const Search = () => {
+const Search = (props) => {
     return (
-        <div className="text-white text-3xl">
-            Search
+        <div className="search">
+            <div>
+                <img src={"search.svg"}></img>
+                <input
+                    type="text"
+                    placeholder="Search..."
+                    value={props.search}
+                    onChange={(event) => props.setSearch(event.target.value)}/>
+            </div>
         </div>
     )
 }

@@ -13,7 +13,7 @@ const database = new TablesDB(client);
 export const updateSearch = async (searchTerm,movie) => {
     try{
         const result = await database.listRows(database_id,"views",[
-            Query.equal("searchTerm",searchTerm),
+            Query.equal("movie_id",movie.id),
         ]);
         if (result.rows.length > 0) {
             const data = result.rows[0];
@@ -33,5 +33,17 @@ export const updateSearch = async (searchTerm,movie) => {
     }
 }
 
+export const getMoviesTrending = async () =>{
+    try{
+        const result = await database.listRows(database_id,"views",[
+            Query.limit(5),
+            Query.orderDesc("count")
+        ]);
+        console.log(result);
+    return result.rows;
+    }catch(error){
+        console.log(error);
+    }
+}
 // export const account = new Account(client);
 // export { ID } from 'appwrite';

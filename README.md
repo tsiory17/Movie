@@ -65,7 +65,7 @@ The app allows users to browse trending films, search for specific titles, and v
 
 ## 🎥 Preview
 
-![Movie App Demo](./demo/movie_app.gif)
+![Movie App Demo](./demo/demo.gif)
 
 
 ---

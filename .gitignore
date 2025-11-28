@@ -81,3 +81,14 @@ dist-ssr
 # package-lock.json
 # yarn.lock
 # pnpm-lock.yaml
+
+
+
+# Claude AI Assistant files
+claude.md
+.claude/
+.claude-code/
+*.claude.md
+
+prompt.md
+

@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useDebounce } from "react-use";
 import Search from "./components/Search.jsx";
 import Spinner from "./components/Spinner.jsx";
 import MovieCard from "./components/MovieCard.jsx";
 import Header from "./components/Header.jsx";
 import Pagination from "./components/Pagination.jsx";
+import Details from "./components/Details.jsx";
 import { getMoviesTrending, updateSearch } from "./lib/appwrite.js";
 
-const App = () => {
+const Home = () => {
   const API_BASE_URL = "https://api.themoviedb.org/3/discover/movie";
   const API_SEARCH_URL = "https://api.themoviedb.org/3/search/movie";
   const API_KEY = import.meta.env.VITE_TMDB_KEY;
@@ -135,4 +137,16 @@ const App = () => {
     </main>
   );
 };
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie/:id" element={<Details />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
 export default App;

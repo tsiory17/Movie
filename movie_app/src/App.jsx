@@ -98,7 +98,7 @@ const Home = () => {
   return (
     <main>
       <div className="pattern " />
-      <div className="wrapper bg-dark-100">
+      <div className="wrapper">
         <Header setSearch={setSearch} search={search} />
 
         {searchedMovies.length > 0 && (

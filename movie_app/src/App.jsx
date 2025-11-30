@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { useDebounce } from "react-use";
 import Search from "./components/Search.jsx";
 import Spinner from "./components/Spinner.jsx";
@@ -10,6 +10,7 @@ import Details from "./components/Details.jsx";
 import { getMoviesTrending, updateSearch } from "./lib/appwrite.js";
 
 const Home = () => {
+  const navigate = useNavigate();
   const API_BASE_URL = "https://api.themoviedb.org/3/discover/movie";
   const API_SEARCH_URL = "https://api.themoviedb.org/3/search/movie";
   const API_KEY = import.meta.env.VITE_TMDB_KEY;
@@ -106,7 +107,11 @@ const Home = () => {
             <h2>Most Searched Movies</h2>
             <ul>
               {searchedMovies.map((movie, index) => (
-                <li key={movie.$id}>
+                <li
+                  key={movie.$id}
+                  onClick={() => navigate(`/movie/${movie.movie_id}`)}
+                  style={{cursor: 'pointer'}}
+                >
                   <p>{index + 1}</p>
                   <img src={movie.poster_url}></img>
                 </li>

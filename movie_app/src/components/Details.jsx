@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Spinner from './Spinner';
+import Navbar from './Navbar';
 
 const Details = () => {
     const { id } = useParams();
@@ -71,7 +72,9 @@ const Details = () => {
     }
 
     return (
-        <div style={{ minHeight: '100vh', paddingTop: '2rem', background: '#f5f5f5', padding: '2rem' }}>
+        <div style={{ minHeight: '100vh', background: '#f5f5f5' }}>
+            <Navbar />
+            <div style={{ padding: '2rem' }}>
             <button
                 onClick={() => navigate('/')}
                 style={{
@@ -289,6 +292,7 @@ const Details = () => {
                         </div>
                     </div>
                 )}
+            </div>
             </div>
         </div>
     );

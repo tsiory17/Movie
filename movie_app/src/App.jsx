@@ -7,6 +7,7 @@ import MovieCard from "./components/MovieCard.jsx";
 import Header from "./components/Header.jsx";
 import Pagination from "./components/Pagination.jsx";
 import Details from "./components/Details.jsx";
+import Navbar from "./components/Navbar.jsx";
 import { getMoviesTrending, updateSearch } from "./lib/appwrite.js";
 
 const Home = () => {
@@ -99,6 +100,7 @@ const Home = () => {
   return (
     <main>
       <div className="pattern " />
+      <Navbar />
       <div className="wrapper">
         <Header setSearch={setSearch} search={search} />
 

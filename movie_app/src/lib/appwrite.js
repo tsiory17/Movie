@@ -6,7 +6,7 @@ const endpoint = import.meta.env.VITE_APPWRITE_ENDPOINT;
 export const client = new Client();
 client
     .setEndpoint(`${endpoint}`)
-    .setProject(`${project_id}`); // Replace with your project ID
+    .setProject(`${project_id}`);
 
 const database = new TablesDB(client);
 
@@ -26,10 +26,7 @@ export const updateSearch = async (searchTerm,movie) => {
                 poster_url: `https://image.tmdb.org/t/p/w500${movie.poster_path}`
             });
         }
-    }catch(error){
-        console.log(error);
-    }finally{
-        console.log(database)
+    }catch{
     }
 }
 
@@ -39,11 +36,7 @@ export const getMoviesTrending = async () =>{
             Query.limit(5),
             Query.orderDesc("count")
         ]);
-        console.log(result);
-    return result.rows;
-    }catch(error){
-        console.log(error);
+        return result.rows;
+    }catch{
     }
 }
-// export const account = new Account(client);
-// export { ID } from 'appwrite';

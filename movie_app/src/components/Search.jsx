@@ -4,7 +4,7 @@ const Search = (props) => {
     return (
         <div className="search">
             <div>
-                <img src={"search.svg"}></img>
+                <img className="h-4 w-4 sm:h-5 sm:w-5" src={"search.svg"}></img>
                 <input
                     type="text"
                     placeholder="Search..."

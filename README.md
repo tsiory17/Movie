@@ -3,6 +3,9 @@
 A modern movie browsing web application built with **React.js**, powered by **Appwrite** as the backend and integrated with **TMDB API** for movie data.  
 The app allows users to browse trending films, search for specific titles, and view the most searched movies.
 
+
+**Live demo**: [Movie App](https://www.tsiorymovie.online/)
+
 ---
 
 ## 🚀 Features
